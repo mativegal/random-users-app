@@ -1,20 +1,32 @@
-import { User } from '../types'
+import { SortBy, User } from '../types.d'
 
 type UsersListProps = {
   users: User[]
   showColors: boolean
   deleteUser: (email: string) => void
+  changeSorting: (sort: SortBy) => void
 }
 
-const UsersList = ({ users, showColors, deleteUser }: UsersListProps) => {
+const UsersList = ({
+  users,
+  showColors,
+  deleteUser,
+  changeSorting,
+}: UsersListProps) => {
   return (
     <table>
       <thead>
         <tr>
           <th>Photo</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Country</th>
+          <th className='pointer' onClick={() => changeSorting(SortBy.NAME)}>
+            First Name
+          </th>
+          <th className='pointer' onClick={() => changeSorting(SortBy.LAST)}>
+            Last Name
+          </th>
+          <th className='pointer' onClick={() => changeSorting(SortBy.COUNTRY)}>
+            Country
+          </th>
           <th>Actions</th>
         </tr>
       </thead>

@@ -1,12 +1,12 @@
 import './App.css'
 import { useEffect, useState, useRef, useMemo } from 'react'
-import { User } from './types'
+import { SortBy, type User } from './types.d'
 import UsersList from './components/UsersList'
 
 function App() {
   const [users, setUsers] = useState<User[]>([])
   const [showColors, setShowColors] = useState<boolean>(false)
-  const [sortByCountry, setSortByCountry] = useState<boolean>(false)
+  const [sorting, setSorting] = useState<SortBy>(SortBy.NONE)
   const [filterCountries, setFilterCountries] = useState<string | null>(null)
   const originalUsers = useRef<User[] | null>(null)
 
@@ -25,7 +25,9 @@ function App() {
   }
 
   const toggleSortByCountry = () => {
-    setSortByCountry(!sortByCountry)
+    const newSortingValue =
+      sorting === SortBy.NONE ? SortBy.COUNTRY : SortBy.NONE
+    setSorting(newSortingValue)
   }
 
   const deleteUser = (email: string) => {
@@ -38,8 +40,6 @@ function App() {
   }
 
   const filteredUsers = useMemo(() => {
-    console.log('a')
-
     return filterCountries
       ? users.filter((user) =>
           user.location.country
@@ -50,15 +50,23 @@ function App() {
   }, [users, filterCountries])
 
   const sortedUsers = useMemo(() => {
-    console.log('b')
+    if (sorting === SortBy.NONE) return filteredUsers
 
-    return sortByCountry
-      ? // Need to return a new array
-        filteredUsers.toSorted((a, b) =>
-          a.location.country.localeCompare(b.location.country)
-        )
-      : filteredUsers
-  }, [filteredUsers, sortByCountry])
+    const compareProperties: Record<string, (user: User) => any> = {
+      [SortBy.COUNTRY]: (user) => user.location.country,
+      [SortBy.NAME]: (user) => user.name.first,
+      [SortBy.LAST]: (user) => user.name.last,
+    }
+
+    return filteredUsers.sort((a, b) => {
+      const extractPropery = compareProperties[sorting]
+      return extractPropery(a).localeCompare(extractPropery(b))
+    })
+  }, [filteredUsers, sorting])
+
+  const handleChangeSort = (sort: SortBy) => {
+    setSorting(sort)
+  }
 
   return (
     <div>
@@ -79,6 +87,7 @@ function App() {
           users={sortedUsers}
           showColors={showColors}
           deleteUser={deleteUser}
+          changeSorting={handleChangeSort}
         />
       </main>
     </div>

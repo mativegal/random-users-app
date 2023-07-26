@@ -24,3 +24,7 @@ button {
 input {
   margin-left: 6px;
 }
+
+.pointer {
+  cursor: pointer;
+}

@@ -1,10 +1,6 @@
-Prueba técnica con TypeScript y React.
+Random Users Table
 
-Debe usar la API proporcionada por https://randomuser.me/.
-
-Tenés 1hs para completar el challenge.
-
-Los pasos a seguir:
+Features:
 
 - [x] Fetch 100 rows of data using the API.
 - [x] Display the data in a table format, similar to the example.

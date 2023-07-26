@@ -1,7 +1,5 @@
 Prueba técnica con TypeScript y React.
 
-Esto es una prueba técnica de una empresa europea para un sueldo de 55000 €/anuales.
-
 Debe usar la API proporcionada por https://randomuser.me/.
 
 Tenés 1hs para completar el challenge.
@@ -16,5 +14,5 @@ Los pasos a seguir:
 - [x] Implement a feature that allows the user to restore the initial state, meaning that all deleted rows will be recovered.
 - [x] Handle any potential errors that may occur.
 - [x] Implement a feature that allows the user to filter the data by country.
-- [x] Avoid sorting users again the data when the user is changing filter by country.
+- [x] Avoid sorting users again the data when the user is changing the filter by country.
 - [x] Sort by clicking on the column header.

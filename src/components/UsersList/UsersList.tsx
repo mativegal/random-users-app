@@ -1,0 +1,54 @@
+import { SortBy, User } from '../../types/index.d'
+
+// Types
+import styles from './UsersList.module.css'
+
+// Components
+import UserListHeader from '../UserListHeader/UserListHeader'
+import UserRow from '../UserRow/UserRow'
+
+type UsersListProps = {
+  users: User[]
+  showColors: boolean
+  deleteUser: (email: string) => void
+  changeSorting: (sort: SortBy) => void
+}
+
+const UsersList = ({
+  users,
+  showColors,
+  deleteUser,
+  changeSorting,
+}: UsersListProps) => {
+  return (
+    <table className={styles.container}>
+      <thead>
+        <UserListHeader changeSorting={changeSorting} />
+      </thead>
+
+      {
+        <tbody>
+          {users.map((user, index) => {
+            const backgroundColor = showColors
+              ? index % 2 === 0
+                ? '#333'
+                : '#555'
+              : 'transparent'
+            return (
+              <tr
+                key={user.email}
+                style={{
+                  backgroundColor,
+                }}
+              >
+                <UserRow user={user} deleteUser={deleteUser} />
+              </tr>
+            )
+          })}
+        </tbody>
+      }
+    </table>
+  )
+}
+
+export default UsersList

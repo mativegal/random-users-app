@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+}
+
+.button {
+  color: black;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: rgb(213, 213, 213);
+  border: transparent;
+  border-radius: 50px;
+  padding: 8px;
+  box-shadow: rgba(149, 157, 165, 0) 0px 8px 24px;
+}

@@ -1,0 +1,14 @@
+.container {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 20px;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.pointer {
+  cursor: pointer;
+}

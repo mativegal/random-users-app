@@ -1,7 +1,12 @@
 import './App.css'
 import { useEffect, useState, useRef, useMemo } from 'react'
-import { SortBy, type User } from './types.d'
-import UsersList from './components/UsersList'
+
+// Types
+import { SortBy, User } from './types/index.d'
+
+// Components
+import Header from './components/Header/Header'
+import UsersList from './components/UsersList/UsersList'
 
 function App() {
   const [users, setUsers] = useState<User[]>([])
@@ -70,26 +75,18 @@ function App() {
 
   return (
     <div>
-      <header>
-        <h1>Random Users Table</h1>
-        <div>
-          <button onClick={toggleColors}>Toggle Colors</button>
-          <button onClick={toggleSortByCountry}>Sort by country</button>
-          <button onClick={restoreUsers}>Restore</button>
-          <input
-            placeholder='Search by country'
-            onChange={(e) => setFilterCountries(e.target.value)}
-          />
-        </div>
-      </header>
-      <main>
-        <UsersList
-          users={sortedUsers}
-          showColors={showColors}
-          deleteUser={deleteUser}
-          changeSorting={handleChangeSort}
-        />
-      </main>
+      <Header
+        toggleColors={toggleColors}
+        toggleSortByCountry={toggleSortByCountry}
+        restoreUsers={restoreUsers}
+        setFilterCountries={setFilterCountries}
+      />
+      <UsersList
+        users={sortedUsers}
+        showColors={showColors}
+        deleteUser={deleteUser}
+        changeSorting={handleChangeSort}
+      />
     </div>
   )
 }

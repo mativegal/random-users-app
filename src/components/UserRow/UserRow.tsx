@@ -2,6 +2,7 @@ import styles from './UserRow.module.css'
 
 // Types
 import { User } from '../../types/index.d'
+import { useNavigate } from 'react-router-dom'
 
 type UserProps = {
   user: User
@@ -9,8 +10,17 @@ type UserProps = {
 }
 
 const UserRow = ({ user, deleteUser }: UserProps) => {
+  const navigate = useNavigate()
+
+  const navigateToUserDetail = (userEmail: string) => {
+    navigate(`/users/${userEmail}`)
+  }
+
   return (
-    <tr className={styles.container}>
+    <tr
+      className={styles.container}
+      onClick={() => navigateToUserDetail(user.email)}
+    >
       <td>
         <img
           className={styles.photo}

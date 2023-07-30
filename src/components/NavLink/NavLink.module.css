@@ -1,0 +1,11 @@
+.linkActive {
+  color: rgb(163, 163, 163);
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.linkNotActive {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}

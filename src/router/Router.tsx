@@ -7,10 +7,7 @@ const Router = () => {
     <div>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route
-          path='/randomuserdetail/:userEmail'
-          element={<RandomUserDetail />}
-        />
+        <Route path='/randomuserdetail/:uuid' element={<RandomUserDetail />} />
         <Route path='*' element={<h1>Not Found</h1>} />
       </Routes>
     </div>

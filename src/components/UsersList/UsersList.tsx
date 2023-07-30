@@ -36,7 +36,7 @@ const UsersList = ({
               : 'transparent'
             return (
               <tr
-                key={user.email}
+                key={user.login.uuid}
                 style={{
                   backgroundColor,
                 }}

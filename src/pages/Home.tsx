@@ -1,4 +1,7 @@
-import { useEffect, useState, useRef, useMemo } from 'react'
+import { useContext, useState, useMemo } from 'react'
+
+// Context
+import { RandomUserContext } from '../context/RandomUserProvider.tsx'
 
 // Types
 import { SortBy, User } from '../types/index.d'
@@ -8,21 +11,10 @@ import Header from '../components/Header/Header'
 import UsersList from '../components/UsersList/UsersList'
 
 function Home() {
-  const [users, setUsers] = useState<User[]>([])
+  const { users, setUsers, originalUsers } = useContext(RandomUserContext)
   const [showColors, setShowColors] = useState<boolean>(false)
   const [sorting, setSorting] = useState<SortBy>(SortBy.NONE)
   const [filterCountries, setFilterCountries] = useState<string | null>(null)
-  const originalUsers = useRef<User[] | null>(null)
-
-  useEffect(() => {
-    fetch('https://randomuser.me/api/?results=100')
-      .then((res) => res.json())
-      .then((data) => {
-        setUsers(data.results)
-        originalUsers.current = data.results
-      })
-      .catch((error) => console.error(error))
-  }, [])
 
   const toggleColors = () => {
     setShowColors(!showColors)

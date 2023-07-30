@@ -12,8 +12,8 @@ type UserProps = {
 const UserRow = ({ user, deleteUser }: UserProps) => {
   const navigate = useNavigate()
 
-  const navigateToUserDetail = (userEmail: string) => {
-    navigate(`/randomuserdetail/${userEmail}`)
+  const navigateToUserDetail = (uuid: string) => {
+    navigate(`/randomuserdetail/${uuid}`)
   }
 
   return (
@@ -31,7 +31,7 @@ const UserRow = ({ user, deleteUser }: UserProps) => {
       <td className={styles.btnContainer}>
         <button
           className={styles.detailBtn}
-          onClick={() => navigateToUserDetail(user.email)}
+          onClick={() => navigateToUserDetail(user.login.uuid)}
         >
           Details
         </button>

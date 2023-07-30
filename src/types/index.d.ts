@@ -11,6 +11,16 @@ export enum SortBy {
   COUNTRY = 'country',
 }
 
+export interface RandomUserContextValue {
+  users: User[]
+  setUsers: React.Dispatch<React.SetStateAction<User[]>>
+  originalUsers: React.MutableRefObject<User[] | null>
+}
+
+export type RandomUserProviderProps = {
+  children: React.ReactNode
+}
+
 export interface Users {
   results: User[]
   info: Info

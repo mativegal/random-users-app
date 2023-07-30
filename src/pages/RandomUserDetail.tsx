@@ -1,7 +1,13 @@
-import { useParams } from 'react-router-dom'
-import { RandomUserContext } from '../context/RandomUserProvider.tsx'
+import styles from './RandomUserDetail.module.css'
 import { useContext, useEffect, useState } from 'react'
+import { RandomUserContext } from '../context/RandomUserProvider.tsx'
+import { useParams } from 'react-router-dom'
+
+// Types
 import { User } from '../types/index'
+
+// Components
+import RandomUserDetailCard from '../components/RandomUserDetailCard/RandomUserDetailCard.tsx'
 
 const RandomUserDetail = () => {
   const { users } = useContext(RandomUserContext)
@@ -9,21 +15,15 @@ const RandomUserDetail = () => {
   const { uuid } = useParams()
 
   useEffect(() => {
-    const userFound = users.find((user) => user.login.uuid === uuid)
-    setUser(userFound || null)
+    const findUserByUUID = users.find((user) => user.login.uuid === uuid)
+    setUser(findUserByUUID || null)
   }, [users, uuid])
 
-  if (!user) {
-    return <div>No se encontró el usuario.</div>
-  }
+  console.log(user?.location.country)
 
   return (
-    <div>
-      <h2>Detalles del Usuario</h2>
-      <p>Nombre: {user.name.first}</p>
-      <p>Apellido: {user.name.last}</p>
-      <p>Email: {user.email}</p>
-      {/* Agrega aquí otros detalles que quieras mostrar */}
+    <div className={styles.container}>
+      <RandomUserDetailCard {...user} />
     </div>
   )
 }

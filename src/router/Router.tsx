@@ -8,7 +8,10 @@ const Router = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/randomuserdetail/:uuid' element={<RandomUserDetail />} />
-        <Route path='*' element={<h1>Not Found</h1>} />
+        <Route
+          path='*'
+          element={<h1 style={{ textAlign: 'center' }}>Not Found</h1>}
+        />
       </Routes>
     </div>
   )

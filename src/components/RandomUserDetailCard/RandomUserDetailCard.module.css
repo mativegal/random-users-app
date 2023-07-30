@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 550px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 2rem;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+  border-radius: 30px;
+}

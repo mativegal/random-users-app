@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import NavLink from '../NavLink/NavLink'
 import styles from './Navbar.module.css'
 
 const Navbar = () => {
@@ -8,14 +8,7 @@ const Navbar = () => {
         <h1 className={styles.title}>Random Users Table</h1>
       </div>
       <div className={styles.links}>
-        <NavLink
-          className={({ isActive }) => {
-            return isActive ? styles.linkActive : styles.linkNotActive
-          }}
-          to={'/'}
-        >
-          Home
-        </NavLink>
+        <NavLink to={'/'}>Home</NavLink>
       </div>
     </div>
   )

@@ -12,15 +12,3 @@
   font-size: 2rem;
   font-weight: 700;
 }
-
-.linkActive {
-  color: rgb(163, 163, 163);
-  text-decoration: none;
-  pointer-events: none;
-}
-
-.linkNotActive {
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-}

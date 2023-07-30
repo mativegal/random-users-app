@@ -11,6 +11,7 @@ const Router = () => {
           path='/randomuserdetail/:userEmail'
           element={<RandomUserDetail />}
         />
+        <Route path='*' element={<h1>Not Found</h1>} />
       </Routes>
     </div>
   )

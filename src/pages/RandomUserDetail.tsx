@@ -1,5 +1,10 @@
+import { useParams } from 'react-router-dom'
+
 const RandomUserDetail = () => {
-  return <div>RandomUserDetail</div>
+  const { userEmail } = useParams()
+  console.log(userEmail)
+
+  return <div>{userEmail}</div>
 }
 
 export default RandomUserDetail

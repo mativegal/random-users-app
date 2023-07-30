@@ -15,7 +15,6 @@ const Header = ({
 }: HeaderProps) => {
   return (
     <header className={styles.container}>
-      <h1 className={styles.title}>Random Users Table</h1>
       <div className={styles.actions}>
         <button className={styles.button} onClick={toggleColors}>
           Toggle Colors

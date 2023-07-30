@@ -13,14 +13,11 @@ const UserRow = ({ user, deleteUser }: UserProps) => {
   const navigate = useNavigate()
 
   const navigateToUserDetail = (userEmail: string) => {
-    navigate(`/users/${userEmail}`)
+    navigate(`/randomuserdetail/${userEmail}`)
   }
 
   return (
-    <tr
-      className={styles.container}
-      onClick={() => navigateToUserDetail(user.email)}
-    >
+    <tr className={styles.container}>
       <td>
         <img
           className={styles.photo}
@@ -31,12 +28,18 @@ const UserRow = ({ user, deleteUser }: UserProps) => {
       <td>{user.name.first}</td>
       <td>{user.name.last}</td>
       <td>{user.location.country}</td>
-      <td>
+      <td className={styles.btnContainer}>
+        <button
+          className={styles.detailBtn}
+          onClick={() => navigateToUserDetail(user.email)}
+        >
+          Details
+        </button>
         <button
           className={styles.deleteBtn}
           onClick={() => deleteUser(user.email)}
         >
-          Delete
+          ❌
         </button>
       </td>
     </tr>

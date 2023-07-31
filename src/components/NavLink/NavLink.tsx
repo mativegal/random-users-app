@@ -4,6 +4,7 @@ import styles from './NavLink.module.css'
 type NavLinkProps = {
   to: string
   children?: React.ReactNode
+  className?: string | {}
 }
 
 const NavLink = ({ children, to, ...props }: NavLinkProps) => {

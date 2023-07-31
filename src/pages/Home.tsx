@@ -1,3 +1,4 @@
+import styles from './Home.module.css'
 import { useContext, useState, useMemo } from 'react'
 
 // Context
@@ -65,7 +66,7 @@ function Home() {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <Header
         toggleColors={toggleColors}
         toggleSortByCountry={toggleSortByCountry}

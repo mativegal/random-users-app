@@ -3,14 +3,12 @@ import styles from './Navbar.module.css'
 
 const Navbar = () => {
   return (
-    <div className={styles.container}>
-      <div>
-        <h1 className={styles.title}>Random Users Table</h1>
-      </div>
+    <nav className={styles.container}>
+      <h1 className={styles.title}>RuT</h1>
       <div className={styles.links}>
         <NavLink to={'/'}>Home</NavLink>
       </div>
-    </div>
+    </nav>
   )
 }
 

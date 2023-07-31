@@ -26,6 +26,7 @@ const Header = ({
           Restore
         </button>
         <input
+          className={styles.searchInput}
           placeholder='Search by country'
           onChange={(e) => setFilterCountries(e.target.value)}
         />

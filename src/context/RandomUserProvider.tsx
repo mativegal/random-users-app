@@ -14,7 +14,7 @@ const RandomUserProvider = ({ children }: RandomUserProviderProps) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://randomuser.me/api/?results=100')
+        const response = await fetch('https://randomuser.me/api/?results=50')
         if (!response.ok) {
           throw new Error('Network response was not ok')
         }

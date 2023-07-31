@@ -22,9 +22,7 @@ const UsersList = ({
 }: UsersListProps) => {
   return (
     <table className={styles.container}>
-      <thead>
-        <UserListHeader changeSorting={changeSorting} />
-      </thead>
+      <UserListHeader changeSorting={changeSorting} />
 
       {
         <tbody>
@@ -35,14 +33,11 @@ const UsersList = ({
                 : '#555'
               : 'transparent'
             return (
-              <tr
+              <UserRow
+                user={user}
                 key={user.login.uuid}
-                style={{
-                  backgroundColor,
-                }}
-              >
-                <UserRow user={user} deleteUser={deleteUser} />
-              </tr>
+                deleteUser={deleteUser}
+              />
             )
           })}
         </tbody>

@@ -17,7 +17,7 @@ const UserRow = ({ user, deleteUser }: UserProps) => {
   }
 
   return (
-    <tr className={styles.container}>
+    <tr className={styles.userRowContainer} key={user.login.uuid}>
       <td>
         <img
           className={styles.photo}

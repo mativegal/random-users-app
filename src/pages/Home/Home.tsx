@@ -2,14 +2,14 @@ import styles from './Home.module.css'
 import { useContext, useState, useMemo } from 'react'
 
 // Context
-import { RandomUserContext } from '../context/RandomUserProvider.tsx'
+import { RandomUserContext } from '../../context/RandomUserProvider.tsx'
 
 // Types
-import { SortBy, User } from '../types/index.d'
+import { SortBy, User } from '../../types/index.d'
 
 // Components
-import Header from '../components/Header/Header'
-import UsersList from '../components/UsersList/UsersList'
+import Header from '../../components/Header/Header.tsx'
+import UsersList from '../../components/UsersList/UsersList.tsx'
 
 function Home() {
   const { users, setUsers, originalUsers } = useContext(RandomUserContext)

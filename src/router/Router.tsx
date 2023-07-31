@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
-import Home from '../pages/Home'
-import RandomUserDetail from '../pages/RandomUserDetail'
+import Home from '../pages/Home/Home'
+import RandomUserDetail from '../pages/RandomUserDetail/RandomUserDetail'
 
 const Router = () => {
   return (

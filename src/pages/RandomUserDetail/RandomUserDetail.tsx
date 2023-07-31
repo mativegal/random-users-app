@@ -19,8 +19,6 @@ const RandomUserDetail = () => {
     setUser(findUserByUUID || null)
   }, [users, uuid])
 
-  console.log(user?.location.country)
-
   return (
     <div className={styles.container}>
       <RandomUserDetailCard {...user} />

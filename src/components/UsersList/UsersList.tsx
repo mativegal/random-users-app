@@ -22,27 +22,27 @@ const UsersList = ({
 }: UsersListProps) => {
   return (
     <table className={styles.container}>
-      <UserListHeader changeSorting={changeSorting} />
+      <thead>
+        <UserListHeader changeSorting={changeSorting} />
+      </thead>
 
-      {
-        <tbody>
-          {users.map((user, index) => {
-            const backgroundColor = showColors
-              ? index % 2 === 0
-                ? '#333'
-                : '#555'
-              : 'transparent'
-            return (
-              <UserRow
-                user={user}
-                key={user.login.uuid}
-                backgroundColor={backgroundColor}
-                deleteUser={deleteUser}
-              />
-            )
-          })}
-        </tbody>
-      }
+      <tbody>
+        {users.map((user, index) => {
+          const backgroundColor = showColors
+            ? index % 2 === 0
+              ? '#333'
+              : '#555'
+            : 'transparent'
+          return (
+            <UserRow
+              user={user}
+              key={user.login.uuid}
+              backgroundColor={backgroundColor}
+              deleteUser={deleteUser}
+            />
+          )
+        })}
+      </tbody>
     </table>
   )
 }

@@ -19,7 +19,7 @@ const UserRow = ({ user, deleteUser, backgroundColor }: UserProps) => {
 
   return (
     <tr
-      className={styles.userRowContainer}
+      className={styles.container}
       key={user.login.uuid}
       style={{ backgroundColor }}
     >

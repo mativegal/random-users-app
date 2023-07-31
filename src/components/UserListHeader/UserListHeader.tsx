@@ -9,30 +9,22 @@ type UserListHeaderProps = {
 
 const UserListHeader = ({ changeSorting }: UserListHeaderProps) => {
   return (
-    <thead className={styles.container}>
-      <tr>
-        <th>Photo</th>
-        <th
-          className={styles.pointer}
-          onClick={() => changeSorting(SortBy.NAME)}
-        >
-          First Name
-        </th>
-        <th
-          className={styles.pointer}
-          onClick={() => changeSorting(SortBy.LAST)}
-        >
-          Last Name
-        </th>
-        <th
-          className={styles.pointer}
-          onClick={() => changeSorting(SortBy.COUNTRY)}
-        >
-          Country
-        </th>
-        <th>Actions</th>
-      </tr>
-    </thead>
+    <tr className={styles.container}>
+      <th>Photo</th>
+      <th className={styles.pointer} onClick={() => changeSorting(SortBy.NAME)}>
+        First Name
+      </th>
+      <th className={styles.pointer} onClick={() => changeSorting(SortBy.LAST)}>
+        Last Name
+      </th>
+      <th
+        className={styles.pointer}
+        onClick={() => changeSorting(SortBy.COUNTRY)}
+      >
+        Country
+      </th>
+      <th>Actions</th>
+    </tr>
   )
 }
 

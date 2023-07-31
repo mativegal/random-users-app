@@ -36,6 +36,7 @@ const UsersList = ({
               <UserRow
                 user={user}
                 key={user.login.uuid}
+                backgroundColor={backgroundColor}
                 deleteUser={deleteUser}
               />
             )

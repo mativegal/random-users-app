@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom'
 type UserProps = {
   user: User
   deleteUser: (email: string) => void
+  backgroundColor: string
 }
 
-const UserRow = ({ user, deleteUser }: UserProps) => {
+const UserRow = ({ user, deleteUser, backgroundColor }: UserProps) => {
   const navigate = useNavigate()
 
   const navigateToUserDetail = (uuid: string) => {
@@ -17,7 +18,11 @@ const UserRow = ({ user, deleteUser }: UserProps) => {
   }
 
   return (
-    <tr className={styles.userRowContainer} key={user.login.uuid}>
+    <tr
+      className={styles.userRowContainer}
+      key={user.login.uuid}
+      style={{ backgroundColor }}
+    >
       <td>
         <img
           className={styles.photo}

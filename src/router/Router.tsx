@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
+
+// Pages
 import Home from '../pages/Home/Home'
 import RandomUserDetail from '../pages/RandomUserDetail/RandomUserDetail'
 
@@ -10,7 +12,16 @@ const Router = () => {
         <Route path='/randomuserdetail/:uuid' element={<RandomUserDetail />} />
         <Route
           path='*'
-          element={<h1 style={{ textAlign: 'center' }}>Not Found</h1>}
+          element={
+            <h1
+              style={{
+                textAlign: 'center',
+                marginTop: '100px',
+              }}
+            >
+              Page Not Found
+            </h1>
+          }
         />
       </Routes>
     </div>

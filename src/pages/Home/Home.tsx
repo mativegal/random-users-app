@@ -21,12 +21,6 @@ function Home() {
     setShowColors(!showColors)
   }
 
-  const toggleSortByCountry = () => {
-    const newSortingValue =
-      sorting === SortBy.NONE ? SortBy.COUNTRY : SortBy.NONE
-    setSorting(newSortingValue)
-  }
-
   const deleteUser = (email: string) => {
     const deletedUsers = users.filter((user) => user.email !== email)
     setUsers(deletedUsers)
@@ -69,7 +63,6 @@ function Home() {
     <div className={styles.container}>
       <Header
         toggleColors={toggleColors}
-        toggleSortByCountry={toggleSortByCountry}
         restoreUsers={restoreUsers}
         setFilterCountries={setFilterCountries}
       />

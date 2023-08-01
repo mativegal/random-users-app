@@ -2,14 +2,12 @@ import styles from './Header.module.css'
 
 type HeaderProps = {
   toggleColors: () => void
-  toggleSortByCountry: () => void
   restoreUsers: () => void
   setFilterCountries: (e: string) => void
 }
 
 const Header = ({
   toggleColors,
-  toggleSortByCountry,
   restoreUsers,
   setFilterCountries,
 }: HeaderProps) => {
@@ -19,9 +17,7 @@ const Header = ({
         <button className={styles.button} onClick={toggleColors}>
           Toggle Colors
         </button>
-        <button className={styles.button} onClick={toggleSortByCountry}>
-          Sort by country
-        </button>
+
         <button className={styles.button} onClick={restoreUsers}>
           Restore
         </button>

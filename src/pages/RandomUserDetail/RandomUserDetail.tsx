@@ -21,7 +21,7 @@ const RandomUserDetail = () => {
 
   return (
     <div className={styles.container}>
-      <RandomUserDetailCard {...user} />
+      {user ? <RandomUserDetailCard {...user} /> : <h1>User not found</h1>}
     </div>
   )
 }
